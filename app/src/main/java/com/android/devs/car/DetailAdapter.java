@@ -52,7 +52,7 @@ public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.DetailView
         return object.size();
     }
 
-    public class DetailViewHolder extends RecyclerView.ViewHolder{
+    public static class DetailViewHolder extends RecyclerView.ViewHolder{
         ImageView imageView;
         TextView textView;
         TextView header;

@@ -18,7 +18,8 @@ class CarViewHolder(val root: View) : RecyclerView.ViewHolder(root) {
     }
 }
 
-class CarListAdapter(val context: Context) : RecyclerView.Adapter<CarViewHolder>() {
+class CarListAdapter(val context: Context, val onclick: () -> Unit) :
+    RecyclerView.Adapter<CarViewHolder>() {
 
     val carList = listOf(
         CarDetails("Hyundai Elite ", "i20 ", R.drawable.hyundai_eite_i20),
@@ -40,6 +41,12 @@ class CarListAdapter(val context: Context) : RecyclerView.Adapter<CarViewHolder>
     override fun getItemCount(): Int = carList.size
 
     override fun onBindViewHolder(holder: CarViewHolder, position: Int) {
-          holder.bindView(carList[position])
+        holder.root.setOnClickListener { onclick() }
+        holder.root.car_name.setOnClickListener { onclick() }
+        holder.root.car_varient.setOnClickListener { onclick() }
+        holder.root.car_image.setOnClickListener { onclick() }
+
+
+        holder.bindView(carList[position])
     }
 }

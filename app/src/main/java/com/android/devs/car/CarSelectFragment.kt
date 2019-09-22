@@ -1,6 +1,7 @@
 package com.android.devs.car
 
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -22,7 +23,13 @@ class CarSelectFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        car_list_recycler_view.adapter = CarListAdapter(context!!)
+        car_list_recycler_view.adapter = CarListAdapter(context!!,::onSelected)
         car_list_recycler_view.layoutManager = LinearLayoutManager(context)
     }
+    fun onSelected()
+    {
+        val acti=Intent(context,SelectRepair::class.java)
+        startActivity(acti)
+    }
+
 }

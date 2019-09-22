@@ -13,5 +13,7 @@ class MainActivity : AppCompatActivity() {
         car_viewpager.offscreenPageLimit=10
         car_tab_layout.setupWithViewPager(car_viewpager)
         setSupportActionBar(toolbar)
+
+
     }
 }

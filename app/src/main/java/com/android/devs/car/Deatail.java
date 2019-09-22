@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import java.util.ArrayList;
@@ -47,10 +48,13 @@ public class Deatail extends AppCompatActivity {
         DetailAdapter imagesAdapter = new DetailAdapter(arrayList,this);
         recyclerView.setAdapter(imagesAdapter);
 
+    }
 
-
-
-
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i=new Intent(this,SelectRepair.class);
+        startActivity(i);
+        finish();
     }
 }

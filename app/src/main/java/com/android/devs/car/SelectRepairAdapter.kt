@@ -9,16 +9,18 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.replair_item.view.*
 
 data class CarRepairItem(val name: String, val description: String, val resId: Int)
-class SelectRepairAdapter(val context: Context) : RecyclerView.Adapter<CarRepairViewHolder>() {
+class SelectRepairAdapter(val context: Context,val onClick:()->Unit) : RecyclerView.Adapter<CarRepairViewHolder>() {
     private val listOfRepair = listOf(
         CarRepairItem("Car handel repair","used to repair holes",R.drawable.thermostat)
-        ,CarRepairItem("Car handel repair 1","used to repair holes",R.drawable.thermostat)
-        ,CarRepairItem("Car handel repair 2","used to repair holes",R.drawable.thermostat)
-        ,CarRepairItem("Car handel repair4","used to repair holes",R.drawable.thermostat),
-        CarRepairItem("Car handel repair5", "used to repair holes", R.drawable.thermostat)
+        ,CarRepairItem("Change Your Engine Coolant",". You’ll need to invest in an air-powered refilling tool to remove air pockets from the cooling system as you fill",R.drawable.screw)
+        ,CarRepairItem("Free Up a Stuck Trailer Hitch"," Then use an air chisel fitted with a hammer bit to knock everything loose",R.drawable.spanner)
+        ,CarRepairItem("Refinish Wheels and Wheel Covers","Then the wheels must dry for 24 more hours after painting before you remount them",R.drawable.bolts),
+        CarRepairItem("Car handel repair4","used to repair holes",R.drawable.spray),
+        CarRepairItem("Car handel repair5", "used to repair holes", R.drawable.tire)
     )
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarRepairViewHolder {
         val root = LayoutInflater.from(context).inflate(R.layout.replair_item, parent, false)
+        root.setOnClickListener { onClick() }
         return CarRepairViewHolder(root)
     }
 

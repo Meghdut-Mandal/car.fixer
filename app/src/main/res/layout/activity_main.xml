@@ -69,6 +69,7 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
+        android:focusable="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="?attr/actionBarSize"
@@ -76,10 +77,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="@drawable/ic_arrow_back_black_24dp">
+        app:navigationIcon="@drawable/ic_menu_black_24dp">
 
         <SearchView
-            android:id="@+id/searchView"
+            android:focusable="true"
+            android:id="@+id/search_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:queryHint="Search Car or brands"
