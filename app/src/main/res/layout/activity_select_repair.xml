@@ -46,10 +46,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
         android:clickable="true"
         app:backgroundTint="#C8FFFFFF"
         app:borderWidth="0dp"
         app:layout_constraintBottom_toTopOf="@+id/floatingActionButton"
         app:layout_constraintEnd_toEndOf="@+id/floatingActionButton"
+        app:rippleColor="#FFFFFF"
         app:srcCompat="@drawable/maintenance" />
 </androidx.constraintlayout.widget.ConstraintLayout>
